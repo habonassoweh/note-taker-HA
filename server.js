@@ -16,11 +16,6 @@ function filterByQuery(query, notesArray) {
       (notes) => notes.title === query.title
     );
   }
-  if (query.text) {
-    filteredResults = filteredResults.filter(
-      (notes) => notes.text === query.text
-    );
-  }
   return filteredResults;
 }
 
