@@ -5,10 +5,6 @@ const PORT = process.env.PORT || 3001;
 //instantiate the server
 const app = express();
 
-app.listen(PORT, () => {
-  console.log(`API server now on port ${PORT}!`);
-});
-
 function filterByQuery(query, notesArray) {
   let filteredResults = notesArray;
   if (query.title) {
@@ -19,6 +15,11 @@ function filterByQuery(query, notesArray) {
   return filteredResults;
 }
 
+function findbyTitle(title, notesArray) {
+  const result = notesArray.filter((notes) => notes.title === title)[0];
+  return result;
+}
+
 app.get("/api/notes", (req, res) => {
   let results = notes;
   if (req.query) {
@@ -27,4 +28,17 @@ app.get("/api/notes", (req, res) => {
   }
 
   res.json(notes);
+});
+
+app.get("/api/notes/:title", (req, res) => {
+  const result = findbyTitle(req.params.title, notes);
+  if (result) {
+    res.json(result);
+  } else {
+    res.send(404);
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`API server now on port ${PORT}!`);
 });
