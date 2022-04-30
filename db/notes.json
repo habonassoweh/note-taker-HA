@@ -1,18 +1,18 @@
 {"notes": [
    {
-        "title":"Test Title",
-        "text":"Test text",
+        "title":"Doc Appointment",
+        "text":"June 5 at 2:00",
         "id": "1"
        
     },
     {
-        "title":"Habon",
-        "text":"Test text",
+        "title":"Groceries",
+        "text":"apples, bananas, flour",
         "id": "2"
     },
     {
-        "title":"Hana",
-        "text":"Test text",
+        "title":"Workout",
+        "text":"Yoga at 7:00pm",
         "id": "3"
       
     }
