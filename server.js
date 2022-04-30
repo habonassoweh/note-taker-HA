@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 //middleware
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -59,6 +60,14 @@ app.get("/api/notes/:title", (req, res) => {
   } else {
     res.send(404);
   }
+});
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+
+app.get("/notes", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 app.post("/api/notes", (req, res) => {
