@@ -5,7 +5,7 @@ const {
   createNewNote,
   validateNotes,
 } = require("../../lib/notes");
-const { notes } = require("../../db/notes.json");
+let { notes } = require("../../db/notes.json");
 
 router.get("/notes", (req, res) => {
   let results = notes;
@@ -33,7 +33,7 @@ router.post("/notes", (req, res) => {
   if (!validateNotes(req.body)) {
     res.status(400).send("The note is not properly formatted.");
   } else {
-    const notes = createNewNote(req.body, notes);
+    notes = createNewNote(req.body, notes);
     res.json(notes);
   }
 });

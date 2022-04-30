@@ -1,21 +1,49 @@
-{"notes": [
-   {
-        "title":"Doc Appointment",
-        "text":"June 5 at 2:00",
-        "id": "1"
-       
+{
+  "notes": [
+    {
+      "title": "Doc Appointment",
+      "text": "June 5 at 2:00",
+      "id": "1"
     },
     {
-        "title":"Groceries",
-        "text":"apples, bananas, flour",
-        "id": "2"
+      "title": "Groceries",
+      "text": "apples, bananas, flour",
+      "id": "2"
     },
     {
-        "title":"Workout",
-        "text":"Yoga at 7:00pm",
-        "id": "3"
-      
+      "title": "Workout",
+      "text": "Yoga at 7:00pm",
+      "id": "3"
+    },
+    {
+      "title": "dkd",
+      "text": "mdsmd",
+      "id": "3"
+    },
+    {
+      "title": "dkd",
+      "text": "mdsmd",
+      "id": "4"
+    },
+    {
+      "title": "practice",
+      "text": "practice",
+      "id": "5"
+    },
+    {
+      "title": "hjhj",
+      "text": "jhjlh",
+      "id": "6"
+    },
+    {
+      "title": "hjbsfj",
+      "text": "nhbdsndb",
+      "id": "7"
+    },
+    {
+      "title": "hello",
+      "text": "hello world\n",
+      "id": "8"
     }
-    
-]
+  ]
 }
