@@ -1,9 +1,15 @@
 const express = require("express");
 const { notes } = require("./db/notes.json");
+const fs = require("fs");
+const path = require("path");
 const PORT = process.env.PORT || 3001;
 
 //instantiate the server
 const app = express();
+
+//middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 function filterByQuery(query, notesArray) {
   let filteredResults = notesArray;
@@ -20,6 +26,17 @@ function findbyTitle(title, notesArray) {
   return result;
 }
 
+function createNewNote(body, notesArray) {
+  const notes = body;
+  notesArray.push(notes);
+  fs.writeFileSync(
+    path.join(__dirname, "./db/notes.json"),
+    JSON.stringify({ notes: notesArray }, null, 2)
+  );
+
+  return notes;
+}
+
 app.get("/api/notes", (req, res) => {
   let results = notes;
   if (req.query) {
@@ -27,7 +44,7 @@ app.get("/api/notes", (req, res) => {
     console.log(req.query);
   }
 
-  res.json(notes);
+  res.json(results);
 });
 
 app.get("/api/notes/:title", (req, res) => {
@@ -37,6 +54,11 @@ app.get("/api/notes/:title", (req, res) => {
   } else {
     res.send(404);
   }
+});
+
+app.post("/api/notes", (req, res) => {
+  const animal = createNewNote(req.body, notes);
+  res.json(notes);
 });
 
 app.listen(PORT, () => {
