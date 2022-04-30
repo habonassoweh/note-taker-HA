@@ -1,3 +1,4 @@
+<img width="1431" alt="Screen Shot 2022-04-30 at 1 26 38 AM" src="https://user-images.githubusercontent.com/94427754/166096851-2865d987-c704-48ef-862d-f597d25916cc.png">
 # Note Taker Starter Code
 
 User Story
@@ -21,3 +22,5 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 
 heroku link: https://quiet-ridge-74912.herokuapp.com/
+<img width="1431" alt="Screen Shot 2022-04-30 at 1 26 38 AM" src="https://user-images.githubusercontent.com/94427754/166096860-b474dab3-f306-4a8c-8615-6c38dae5c759.png">
+<img width="1187" alt="Screen Shot 2022-04-30 at 3 47 27 AM" src="https://user-images.githubusercontent.com/94427754/166096885-1e556c4a-00e2-48f6-9c15-03709c99ac51.png">
