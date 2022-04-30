@@ -37,6 +37,11 @@ function createNewNote(body, notesArray) {
   return notes;
 }
 
+function validateNotes(notes) {
+  if (!notes.title || typeof notes.title !== "string") {
+    return false;
+  }
+}
 app.get("/api/notes", (req, res) => {
   let results = notes;
   if (req.query) {
@@ -57,8 +62,16 @@ app.get("/api/notes/:title", (req, res) => {
 });
 
 app.post("/api/notes", (req, res) => {
-  const animal = createNewNote(req.body, notes);
-  res.json(notes);
+  // set id based on what the next index of the array
+  //will be
+
+  req.body.id = notes.length.toString();
+  if (!validateNotes(req.body)) {
+    res.status(400).send("The note is not properly formatted.");
+  } else {
+    const notes = createNewNote(req.body, notes);
+    res.json(notes);
+  }
 });
 
 app.listen(PORT, () => {
